@@ -1,3 +1,4 @@
+
 let posts=[ ];
 
 const likedPostsId = [];
@@ -48,7 +49,9 @@ const switchTab = (id) => {
 
         displayReportedPosts();
     }
+    
 };
+
 
 const createPost = (post) => {
     const image = post.image;
@@ -143,11 +146,14 @@ const showPosts = (posts) => {
 };
 
 const displayLikedPosts = () => {
+    document.getElementById("liked").innerHTML = ``; 
     const likedPosts = getLikedPosts();
     likedPosts.forEach((post) => {
         const div = createPost(post);
         document.getElementById( "liked" ).appendChild(div);
+        
     });
+    
 };
 
 const displayReportedPosts = () => {
